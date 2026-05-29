@@ -1,4 +1,4 @@
-let apiKey = "AQ.Ab8RN6L_MOm7B6jCAvnwhr4mwRSawpiY3MYi1Ns2LemFbu5caw"
+let apiKey = ""
 
 let SYSTEM_PROMPT = `
 너는 고양이 캐릭터야.
@@ -42,6 +42,13 @@ const responseSchema = {
 function setup() {
   createCanvas(640, 480);
 
+  console.log(config.apiKey);
+  if (config.apiKey) {
+    apiKey = config.apiKey
+  }
+  else {
+    apiKey = 0;
+  }
   myInput = createInput();
   myInput.position(0, 480);
   myInput.style("width", "618px");
